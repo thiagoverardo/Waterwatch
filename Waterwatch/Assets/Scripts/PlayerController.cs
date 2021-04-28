@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
    float _baseSpeed = 10.0f;
    float _gravidade = 9.8f;
+   private Vector3 playerVelocity;
+   private float jumpHeight = 2.0f;
+   private bool canJump = false;
 
    //Referência usada para a câmera filha do jogador
    GameObject playerCamera;
@@ -28,17 +31,29 @@ public class PlayerController : MonoBehaviour
        
        //Verificando se é preciso aplicar a gravidade
        float y = 0;
-       if(!characterController.isGrounded){
-           y = -_gravidade;
-       }
        
-        //Tratando movimentação do mouse
+       //Tratando movimentação do mouse
        float mouse_dX = Input.GetAxis("Mouse X");
        float mouse_dY = Input.GetAxis("Mouse Y");
        //Tratando a rotação da câmera
        cameraRotation -= mouse_dY;
        Mathf.Clamp(cameraRotation, -75.0f, 75.0f);
-       
+
+       Debug.Log(canJump);
+
+       if(characterController.isGrounded){
+           canJump = true;
+       }
+
+       if (Input.GetButtonDown("Jump") && canJump)
+       {
+           playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * -_gravidade);
+           canJump = false;
+       }
+
+       playerVelocity.y += -_gravidade * Time.deltaTime;
+       characterController.Move(playerVelocity * Time.deltaTime);
+
        Vector3 direction = transform.right * x + transform.up * y + transform.forward * z;
 
        characterController.Move(direction * _baseSpeed * Time.deltaTime);
@@ -49,9 +64,10 @@ public class PlayerController : MonoBehaviour
 
    void LateUpdate()
    {
+        Vector3 raycastPos = new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y - 0.6f, playerCamera.transform.position.z);
         RaycastHit hit;
-        Debug.DrawRay(playerCamera.transform.position, transform.forward*10.0f, Color.magenta);
-        if(Physics.Raycast(playerCamera.transform.position, transform.forward, out hit, 100.0f))
+        Debug.DrawRay(raycastPos, transform.forward*10.0f, Color.magenta);
+        if(Physics.Raycast(raycastPos, transform.forward, out hit, 100.0f))
         {
             Debug.Log(hit.collider.name);
         }
