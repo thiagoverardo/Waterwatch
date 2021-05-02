@@ -39,8 +39,6 @@ public class PlayerController : MonoBehaviour
        cameraRotation -= mouse_dY;
        Mathf.Clamp(cameraRotation, -75.0f, 75.0f);
 
-       Debug.Log(canJump);
-
        if(characterController.isGrounded){
            canJump = true;
        }
@@ -66,7 +64,6 @@ public class PlayerController : MonoBehaviour
    {
         Vector3 raycastPos = new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y - 0.6f, playerCamera.transform.position.z);
         RaycastHit hit;
-        Debug.DrawRay(raycastPos, transform.forward*10.0f, Color.magenta);
         if(Physics.Raycast(raycastPos, transform.forward, out hit, 100.0f))
         {
             Debug.Log(hit.collider.name);
