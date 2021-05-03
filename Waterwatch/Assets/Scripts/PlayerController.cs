@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     GameObject playerCamera;
     //Utilizada para poder travar a rotação no angulo que quisermos.
     float cameraRotation;
+    public Inventory inventory;
 
     CharacterController characterController;
 
@@ -68,6 +69,15 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(raycastPos, transform.forward, out hit, 100.0f))
         {
             Debug.Log(hit.collider.name);
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+        if(item != null)
+        {
+            inventory.AddItem(item);
         }
     }
 }
