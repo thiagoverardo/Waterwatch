@@ -42,5 +42,6 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
 
     public virtual void OnUse()
     {
+        
     }
 }

@@ -9,9 +9,10 @@ public class ItemClickHandler : MonoBehaviour
     {
         ItemDragHandler dragHandler = gameObject.transform.Find("ItemImage").GetComponent<ItemDragHandler>();
         IInventoryItem item = dragHandler.Item;
-
-        Debug.Log(item.Name);
-        _Inventory.UseItem(item);
-        item.OnUse();
+        if(item != null)
+        {
+            _Inventory.UseItem(item);
+            item.OnUse();
+        }
     }
 }
