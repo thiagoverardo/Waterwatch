@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
     private List<IInventoryItem> mItems = new List<IInventoryItem>();
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
+    public event EventHandler<InventoryEventArgs> ItemRemoved;
+    public event EventHandler<InventoryEventArgs> ItemUsed;
 
     public void AddItem(IInventoryItem item)
     {
@@ -29,15 +31,33 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    // Start is called before the first frame update
-    void Start()
+    
+    internal void UseItem(IInventoryItem item)
     {
-        
+        if(ItemUsed != null)
+        {
+            ItemUsed(this, new InventoryEventArgs(item));
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void RemoveItem(IInventoryItem item)
     {
-        
+        if(mItems.Contains(item))
+        {
+            mItems.Remove(item);
+
+            item.OnDrop();
+
+            Collider collider = (item as MonoBehaviour).GetComponent<Collider>();
+            if(collider != null)
+            {
+                collider.enabled = true;
+            }
+
+            if(ItemRemoved != null)
+            {
+                ItemRemoved(this, new InventoryEventArgs(item));
+            }
+            
+        }
     }
 }

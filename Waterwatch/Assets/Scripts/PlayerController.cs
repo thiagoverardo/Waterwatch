@@ -15,18 +15,37 @@ public class PlayerController : MonoBehaviour
     //Utilizada para poder travar a rotação no angulo que quisermos.
     float cameraRotation;
     public Inventory inventory;
-
+    public GameObject hand;
     CharacterController characterController;
+    public HUD hud;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         playerCamera = GameObject.Find("Main Camera");
         cameraRotation = 0.0f;
+        inventory.ItemUsed += Inventory_ItemUsed;
+    }
+
+    private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
+    {
+        IInventoryItem item = e.Item;
+
+        GameObject goItem = (item as MonoBehaviour).gameObject;
+        goItem.SetActive(true);
+
+        goItem.transform.parent = hand.transform;
+        goItem.transform.localPosition = (item as InventoryItemBase).PickPosition;
+        goItem.transform.localEulerAngles = (item as InventoryItemBase).PickRotation;
     }
 
     void Update()
     {
+        if(mItemToPickup != null && Input.GetKeyDown(KeyCode.F)){
+            inventory.AddItem(mItemToPickup);
+            mItemToPickup.OnPickup();
+            hud.CloseMessagePanel("");
+        }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -71,13 +90,29 @@ public class PlayerController : MonoBehaviour
             Debug.Log(hit.collider.name);
         }
     }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    IInventoryItem mItemToPickup = null;
+    private void OnTriggerEnter(Collider other)
     {
-        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+        IInventoryItem item = other.GetComponent<IInventoryItem>();
         if(item != null)
         {
-            inventory.AddItem(item);
+            // inventory.AddItem(item);
+            // item.OnPickup();
+            mItemToPickup = item;
+            hud.OpenMessagePanel("");
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        IInventoryItem item = other.GetComponent<IInventoryItem>();
+        if(item != null)
+        {
+            // inventory.AddItem(item);
+            // item.OnPickup();
+            
+            hud.CloseMessagePanel("");
+            mItemToPickup = null;
+
         }
     }
 }

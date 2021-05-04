@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scroll : InventoryItemBase
+public class FlareGun : InventoryItemBase
 {
     public override string Name
     {
         get
         {
-            return "Scroll";
+            return "Flare";
         }
+    }
+
+    public override void OnUse()
+    {
+        base.OnUse();
     }
 }
