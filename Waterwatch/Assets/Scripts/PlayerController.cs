@@ -20,26 +20,29 @@ public class PlayerController : MonoBehaviour
     CharacterController characterController;
     public HUD hud;
 
+    AudioSource walkingSound;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         playerCamera = GameObject.Find("Main Camera");
         cameraRotation = 0.0f;
         inventory.ItemUsed += Inventory_ItemUsed;
+        walkingSound = GetComponent<AudioSource>();
     }
 
     private IInventoryItem mCurrentItem = null;
     public GameObject goItem;
     private void Inventory_ItemUsed(object sender, InventoryEventArgs e)
     {
-        if(mCurrentItem != null)
+        if (mCurrentItem != null)
         {
             goItem.SetActive(false);
         }
 
         IInventoryItem item = e.Item;
 
-        if(item != null)
+        if (item != null)
         {
             goItem = (item as MonoBehaviour).gameObject;
             goItem.SetActive(true);
@@ -52,13 +55,13 @@ public class PlayerController : MonoBehaviour
 
             mCurrentItem = e.Item;
         }
-        
+
     }
     private bool mLockPickup = false;
 
     private void DropCurrentItem()
     {
-        if(mCurrentItem != null)
+        if (mCurrentItem != null)
         {
             mLockPickup = true;
             goItem = (mCurrentItem as MonoBehaviour).gameObject;
@@ -81,7 +84,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             DropCurrentItem();
         }
@@ -89,13 +92,24 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if(mItemToPickup != null && Input.GetKeyDown(KeyCode.F)){
+        if (mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
+        {
             inventory.AddItem(mItemToPickup);
             mItemToPickup.OnPickup();
             hud.CloseMessagePanel("");
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+
+        if (x != 0 || z != 0)
+        {
+            if (!walkingSound.isPlaying)
+                walkingSound.Play();
+        }
+        else
+        {
+            walkingSound.Stop();
+        }
 
         //Verificando se é preciso aplicar a gravidade
         float y = 0;
@@ -141,13 +155,13 @@ public class PlayerController : MonoBehaviour
     IInventoryItem mItemToPickup = null;
     private void OnTriggerEnter(Collider other)
     {
-        if(mLockPickup)
+        if (mLockPickup)
         {
             return;
         }
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
-        if(item != null)
+        if (item != null)
         {
             mItemToPickup = item;
             hud.OpenMessagePanel("");
@@ -156,7 +170,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         IInventoryItem item = other.GetComponent<IInventoryItem>();
-        if(item != null)
+        if (item != null)
         {
             hud.CloseMessagePanel("");
             mItemToPickup = null;
