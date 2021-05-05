@@ -114,12 +114,14 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if ((x != 0 || z != 0) && Input.GetKey(KeyCode.LeftShift) && stamina > .0f)
+        if ((x != 0 || z != 0) && Input.GetKey(KeyCode.LeftShift) && stamina > .5f)
         {
             _baseSpeed = 10.0f * 1.75f;
-            stamina -= Time.deltaTime * 10;
+            stamina -= Time.deltaTime * 17.5f;
             Debug.Log(stamina);
-            if (stamina < 25.0f)
+            if (stamina < 0.0f)
+                stamina -= 50.0f;
+            else if (stamina < 25.0f)
             {
                 tiredSFX.mute = false;
                 // https://www.fesliyanstudios.com/royalty-free-sound-effects-download/person-sighing-160
