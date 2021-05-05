@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scroll : InventoryItemBase
+public class Scroll1 : InventoryItemBase
 {
     public HUD hud;
     public string data;

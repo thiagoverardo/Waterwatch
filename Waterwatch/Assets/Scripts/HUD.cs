@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
     public Inventory inventory;
     public GameObject MessagePanel;
+    public GameObject ScrollPanel;
+    public TMP_Text txtDate;
+    public TMP_Text txtMessage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,5 +64,17 @@ public class HUD : MonoBehaviour
     public void CloseMessagePanel(string text)
     {
         MessagePanel.SetActive(false);
+    }
+
+    public void OpenScrollPanel(string date, string text)
+    {
+        txtDate.text = date;
+        txtMessage.text = text;
+        ScrollPanel.SetActive(true);
+    }
+
+    public void CloseScrollPanel()
+    {
+        ScrollPanel.SetActive(false);
     }
 }

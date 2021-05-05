@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public GameObject hand;
     CharacterController characterController;
     public HUD hud;
+    public GameObject ScrollPanel;
 
     AudioSource walkingSound;
 
@@ -92,12 +93,20 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (mItemToPickup != null && Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            inventory.AddItem(mItemToPickup);
-            mItemToPickup.OnPickup();
-            hud.CloseMessagePanel("");
+            if(ScrollPanel.activeSelf){
+                hud.CloseScrollPanel();
+            }
+            
+            if(mItemToPickup != null)
+            {
+                inventory.AddItem(mItemToPickup);
+                mItemToPickup.OnPickup();
+                hud.CloseMessagePanel("");
+            }
         }
+        
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -117,9 +126,22 @@ public class PlayerController : MonoBehaviour
         //Tratando movimentação do mouse
         float mouse_dX = Input.GetAxis("Mouse X");
         float mouse_dY = Input.GetAxis("Mouse Y");
+
         //Tratando a rotação da câmera
-        cameraRotation -= mouse_dY;
-        Mathf.Clamp(cameraRotation, -75.0f, 75.0f);
+        if(cameraRotation >= -20 && cameraRotation <= 45)
+        {
+            cameraRotation -= mouse_dY;
+            Mathf.Clamp(cameraRotation, -75.0f, 75.0f);
+        }
+        if(cameraRotation < -20)
+        {
+            cameraRotation = -20;
+        }
+
+        if(cameraRotation > 45)
+        {
+            cameraRotation = 45;
+        }
 
         if (characterController.isGrounded)
         {
@@ -143,15 +165,6 @@ public class PlayerController : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(cameraRotation, 0.0f, 0.0f);
     }
 
-    void LateUpdate()
-    {
-        Vector3 raycastPos = new Vector3(playerCamera.transform.position.x, playerCamera.transform.position.y - 0.6f, playerCamera.transform.position.z);
-        RaycastHit hit;
-        if (Physics.Raycast(raycastPos, transform.forward, out hit, 100.0f))
-        {
-            object_hit = hit.collider.name;
-        }
-    }
     IInventoryItem mItemToPickup = null;
     private void OnTriggerEnter(Collider other)
     {

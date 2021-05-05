@@ -30,14 +30,14 @@ public class InventoryItemBase : MonoBehaviour, IInventoryItem
 
     public virtual void OnDrop()
     {
-        RaycastHit hit = new RaycastHit();
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit, 2000))
-        {
-            gameObject.SetActive(true);
-            gameObject.transform.position = hit.point;
-        }
-        
+        // Caso queira dropar o item aonde o ponteiro do mouse está
+        // RaycastHit hit = new RaycastHit();
+        // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // if(Physics.Raycast(ray, out hit, 2000))
+        // {
+        //     gameObject.SetActive(true);
+        //     gameObject.transform.position = hit.point;
+        // }
     }
 
     public virtual void OnUse()
