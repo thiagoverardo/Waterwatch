@@ -21,7 +21,10 @@ public class PlayerController : MonoBehaviour
     public HUD hud;
     public GameObject ScrollPanel;
 
+    public float stamina = 100.0f;
+
     AudioSource walkingSound;
+    public AudioSource tiredSFX;
 
     void Start()
     {
@@ -95,20 +98,41 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if(ScrollPanel.activeSelf){
+            if (ScrollPanel.activeSelf)
+            {
                 hud.CloseScrollPanel();
             }
-            
-            if(mItemToPickup != null)
+
+            if (mItemToPickup != null)
             {
                 inventory.AddItem(mItemToPickup);
                 mItemToPickup.OnPickup();
                 hud.CloseMessagePanel("");
             }
         }
-        
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+
+        if ((x != 0 || z != 0) && Input.GetKey(KeyCode.LeftShift) && stamina > .0f)
+        {
+            _baseSpeed = 10.0f * 1.75f;
+            stamina -= Time.deltaTime * 10;
+            Debug.Log(stamina);
+            if (stamina < 25.0f)
+            {
+                tiredSFX.mute = false;
+                // https://www.fesliyanstudios.com/royalty-free-sound-effects-download/person-sighing-160
+                if (!tiredSFX.isPlaying)
+                    tiredSFX.Play();
+            }
+        }
+        else
+        {
+            _baseSpeed = 10.0f;
+            if (stamina < 100)
+                stamina += Time.deltaTime * 5;
+        }
 
         if (x != 0 || z != 0)
         {
@@ -128,17 +152,17 @@ public class PlayerController : MonoBehaviour
         float mouse_dY = Input.GetAxis("Mouse Y");
 
         //Tratando a rotação da câmera
-        if(cameraRotation >= -20 && cameraRotation <= 45)
+        if (cameraRotation >= -20 && cameraRotation <= 45)
         {
             cameraRotation -= mouse_dY;
             Mathf.Clamp(cameraRotation, -75.0f, 75.0f);
         }
-        if(cameraRotation < -20)
+        if (cameraRotation < -20)
         {
             cameraRotation = -20;
         }
 
-        if(cameraRotation > 45)
+        if (cameraRotation > 45)
         {
             cameraRotation = 45;
         }
