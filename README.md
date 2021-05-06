@@ -81,7 +81,7 @@ Não há dificuldades no jogo. É um jogo simples para apreciar a ambientação
 e encontrar mensagens deixadas na ilha e o item para sinalizar que está 
 vivo, fechando a história.
 
-## Storyboard
+## Narrativa e Storyboard
 ---
 
 ### Registro de Logs do jogador (Nota inicial, no barco):
@@ -108,6 +108,18 @@ Nota na vila abandonada (outro lado da ilha):
 Nota na casa das árvores vermelhas:
 > 27 de julho de 1992
 >> Mandaram eu escrever essa carta, caso alguem viesse procurar pelo baú. Bom, ele está por aqui por perto na região da praia. Boa sorte. 
+
+#### Storyboard:
+
+Personagem: apenas Thive está presente nessa narrativa. É possível perceber que a ilha 
+já foi uma vez habitada. Mas não há sinal de vida dos locais.
+
+Trama: nosso herói se encontra numa ilha deserta, e deve 
+sinalizar o mundo que ainda está vivo e necessita resgate. 
+
+Objetivo: nessa ilha, existem notas que mostram os 
+acontecimentos passados que ali ocorreram. Thive deve procurar por essas 
+notas em busca de pistas para conseguir escapar da ilha paradisíaca.
 
 ## Fluxo do jogo
 
