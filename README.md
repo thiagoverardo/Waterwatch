@@ -84,7 +84,8 @@ vivo, fechando a história.
 ## Narrativa e Storyboard
 ---
 
-### Registro de Logs do jogador (Nota inicial, no barco):
+### Registro de Logs do jogador:
+Nota inicial, no barco:
 > 5 de maio de 2021
 >> Estava pesacando pela região das ilhas maldivas, e derrepente acabou a gasolina do meu barco, o que é muito estranho. Nunca havia acontecido isso, sou o pescador mais cuidadoso do mundo, mas hoje a ganância por uns peixinhos a mais me deixou preso nessa ilha. Vou começar a minha jornada aqui e por isso estou escrevendo essa cartinha e deixando aqui no barco. Vou explorar essa ilha enorme e, caso não consiga sobreviver, alguém poderá achar esse registro.
 
