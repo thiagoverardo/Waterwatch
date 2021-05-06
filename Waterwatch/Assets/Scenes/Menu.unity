@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1386,7 +1386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 111.70001}
+  m_AnchoredPosition: {x: 0, y: 243}
   m_SizeDelta: {x: -500, y: -815.4111}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &433324651
@@ -1410,7 +1410,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "ANDAR - WASD\n\nENQUANTO ANDANDO, CORRER - LEFT SHIFT\n\nINTERAGIR/PEGAR
     OBJETOS - F\n\nPULAR - BARRA DE ESPA\xC7O\n\nDROPAR ITEM - G\n\nSELECIONAR PR\xD3XIMO
-    ITEM - E\n\nSELECIONAR ITEM ANTERIOR - Q"
+    ITEM - E\n\nSELECIONAR ITEM ANTERIOR - Q\n\nATIRAR (FLARE GUN EQUIPADA) - MOUSE
+    ESQUERDO"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2600,7 +2601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 323.38}
+  m_AnchoredPosition: {x: 0, y: 454}
   m_SizeDelta: {x: 0, y: -255.54071}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919731798

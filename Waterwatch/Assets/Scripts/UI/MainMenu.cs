@@ -15,11 +15,6 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadGameAsync());
     }
 
-    public void OptionsMenu()
-    {
-        // adicionar opcoes do volume
-    }
-
     public void QuitGame()
     {
         Application.Quit();
