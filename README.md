@@ -54,7 +54,7 @@ também influenciou na decisão da arte do jogo.
 ---
 
 A interface do jogador é simples, composta pela câmera pela qual o jogador 
-encherga e uma barra simples de inventário. É possível interagir com itens 
+enxerga e uma barra simples de inventário. É possível interagir com itens 
 do inventário apertando __, avançar no inventário ou voltar para algum 
 item com as teclas __ e __ também é possível.
 
