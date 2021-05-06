@@ -4714,7 +4714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2079934771}
   m_Layer: 5
-  m_Name: Contoles
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

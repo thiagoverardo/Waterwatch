@@ -120,8 +120,8 @@ public class PlayerController : MonoBehaviour
             stamina -= Time.deltaTime * 17.5f;
             Debug.Log(stamina);
             if (stamina < 0.0f)
-                stamina -= 50.0f;
-            else if (stamina < 25.0f)
+                stamina -= 25.0f;
+            else if (stamina < 30.0f)
             {
                 tiredSFX.mute = false;
                 // https://www.fesliyanstudios.com/royalty-free-sound-effects-download/person-sighing-160
@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
                 stamina += Time.deltaTime * 5;
         }
 
-        if (x != 0 || z != 0)
+        if (x != 0 || z != 0 && characterController.isGrounded)
         {
             if (!walkingSound.isPlaying)
                 walkingSound.Play();
