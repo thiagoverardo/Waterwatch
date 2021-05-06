@@ -8,7 +8,7 @@ public class FlareGun : InventoryItemBase
     {
         get
         {
-            return "Flare";
+            return "flaregun";
         }
     }
 

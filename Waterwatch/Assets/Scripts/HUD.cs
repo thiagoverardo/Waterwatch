@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour
     public GameObject ScrollPanel;
     public TMP_Text txtDate;
     public TMP_Text txtMessage;
+    public TMP_Text txtAlert;
 
     // Start is called before the first frame update
     void Start()
@@ -58,10 +59,11 @@ public class HUD : MonoBehaviour
 
     public void OpenMessagePanel(string text)
     {
+        txtAlert.text = text;
         MessagePanel.SetActive(true);
     }
 
-    public void CloseMessagePanel(string text)
+    public void CloseMessagePanel()
     {
         MessagePanel.SetActive(false);
     }

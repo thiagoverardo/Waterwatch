@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     AudioSource walkingSound;
     public AudioSource tiredSFX;
+    public Chest chest;
 
     void Start()
     {
@@ -107,7 +108,12 @@ public class PlayerController : MonoBehaviour
             {
                 inventory.AddItem(mItemToPickup);
                 mItemToPickup.OnPickup();
-                hud.CloseMessagePanel("");
+                hud.CloseMessagePanel();
+            }
+
+            if(chestToOpen)
+            {
+                chest.openChest();
             }
         }
 
@@ -192,6 +198,7 @@ public class PlayerController : MonoBehaviour
     }
 
     IInventoryItem mItemToPickup = null;
+    bool chestToOpen = false;
     private void OnTriggerEnter(Collider other)
     {
         if (mLockPickup)
@@ -199,19 +206,31 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        if(other.gameObject.tag == "chest")
+        {
+            hud.OpenMessagePanel("Pressione F para abrir");
+            chestToOpen = true;
+        }
+
         IInventoryItem item = other.GetComponent<IInventoryItem>();
         if (item != null)
         {
             mItemToPickup = item;
-            hud.OpenMessagePanel("");
+            hud.OpenMessagePanel("Pressione F para pegar");
         }
     }
     private void OnTriggerExit(Collider other)
     {
+        if(other.gameObject.tag == "chest")
+        {
+            hud.CloseMessagePanel();
+            chestToOpen = false;
+        }
+
         IInventoryItem item = other.GetComponent<IInventoryItem>();
         if (item != null)
         {
-            hud.CloseMessagePanel("");
+            hud.CloseMessagePanel();
             mItemToPickup = null;
 
         }
