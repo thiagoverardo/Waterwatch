@@ -1,6 +1,6 @@
 Waterwatch
 
-O ínfame pescador Thive estava pescando. Grande dia para Thive. 
+O infame pescador Thive estava pescando. Grande dia para Thive. 
 No entanto, seu barco colapsa. Quando Thive acorda, repara que está 
 numa ilha desconhecida. Thive se tornou o que mais temia, um náufrago.
 
