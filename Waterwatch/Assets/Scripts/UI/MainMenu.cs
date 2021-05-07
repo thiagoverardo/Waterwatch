@@ -26,6 +26,8 @@ public class MainMenu : MonoBehaviour
 
         LoadingScreen.SetActive(true);
 
+        Cursor.visible = false;
+
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);

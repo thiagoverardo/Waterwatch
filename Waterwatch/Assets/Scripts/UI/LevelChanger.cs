@@ -4,13 +4,6 @@ using UnityEngine.SceneManagement;
 public class LevelChanger : MonoBehaviour
 {
     public Animator animator;
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void FadeToGameOver()
     {
         animator.SetTrigger("FadeOut");
@@ -18,6 +11,7 @@ public class LevelChanger : MonoBehaviour
 
     public void OnFadeComplete()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene(2);
     }
 }
