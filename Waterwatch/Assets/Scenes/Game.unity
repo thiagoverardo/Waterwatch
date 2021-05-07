@@ -1072,6 +1072,12 @@ MonoBehaviour:
   hand: {fileID: 825985074}
   hud: {fileID: 1317064374}
   ScrollPanel: {fileID: 1407394081}
+  but1: {fileID: 673124671}
+  but2: {fileID: 1007723024}
+  but3: {fileID: 344725426}
+  but4: {fileID: 320991577}
+  but5: {fileID: 293262592}
+  but6: {fileID: 1813505232}
   stamina: 100
   tiredSFX: {fileID: 719229271}
   chest: {fileID: 980562783}

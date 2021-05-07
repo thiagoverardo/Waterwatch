@@ -68,11 +68,11 @@ F, o item é adicionado ao inventário do jogador.
 - WASD para andar;
 - Movimento do mouse controla a visão;
 - F para pegar item ou fechar item sendo usado;
-- __ para usar item;
-- __ para ir à direita no inventário;
-- __ para ir à esquerda no inventário;
+- Botões 1 a 6 para selecionar o item desejado;
+- E para usar item;
 - G para dropar item;
 - Left Shift para correr (enquanto andando);
+- Botão esquerdo do mouse para atirar (Flare Gun na mão);
 
 ## Dificuldade
 ---

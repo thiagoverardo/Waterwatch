@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,7 +21,12 @@ public class PlayerController : MonoBehaviour
     CharacterController characterController;
     public HUD hud;
     public GameObject ScrollPanel;
-
+    public GameObject but1;
+    public GameObject but2;
+    public GameObject but3;
+    public GameObject but4;
+    public GameObject but5;
+    public GameObject but6;
     public float stamina = 100.0f;
 
     AudioSource walkingSound;
@@ -96,6 +102,41 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Button bbut1 = but1.GetComponent<Button>();
+            bbut1.Select();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Button bbut2 = but2.GetComponent<Button>();
+            bbut2.Select();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Button bbut3 = but3.GetComponent<Button>();
+            bbut3.Select();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Button bbut4 = but4.GetComponent<Button>();
+            bbut4.Select();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            Button bbut5 = but5.GetComponent<Button>();
+            bbut5.Select();
+        }
+        
+        if(Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            Button bbut6 = but6.GetComponent<Button>();
+            bbut6.Select();
+        }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
