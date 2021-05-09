@@ -163,3 +163,5 @@ Exploração;
 ---
 
 Ao entrar no jogo, voltar para o menu e começar o jogo novamente a tela do jogo fica preta. Basta clicar ESC para desativar essa tela.
+
+Primeira vez que pausar o jogo, o menu de pause não aparece. É preciso pressionar ESC mais uma vez.
