@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Scolls_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 747b12a5aff44474e90c4ac920503ef6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8722620416
+    m_Localized: "Estava pescando pela regi\xE3o das ilhas maldivas, e derrepente
+      acabou a gasolina do meu barco, o que \xE9 muito estranho. Nunca havia acontecido
+      isso, sou o pescador mais cuidadoso do mundo, mas hoje a gan\xE2ncia por uns
+      peixinhos a mais me deixou preso nessa ilha. Vou come\xE7ar a minha jornada
+      aqui e por isso estou escrevendo essa cartinha e deixando aqui no barco. Vou
+      explorar essa ilha enorme e, caso n\xE3o consiga sobreviver, algu\xE9m poder\xE1
+      achar esse registro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765874184192
+    m_Localized: 5 de maio de 2021
+    m_Metadata:
+      m_Items: []
+  - m_Id: 900465205248
+    m_Localized: "Caso achem essa carta, estamos evacuando essa ilha por conta de
+      uma briga com o outro lado. O povo do outro lado da ilha \xE9 muito perigoso
+      e est\xE1 amea\xE7ando o povo de c\xE1. Eles mandam sinais de fuma\xE7a todos
+      os dias amea\xE7ando a todos desse lado. Eles s\xE3o muito mais avan\xE7ados
+      do que n\xF3s e n\xE3o ter\xEDamos chances contra eles. CUIDADO."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 938117472256
+    m_Localized: 22 de julho de 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 962809339904
+    m_Localized: "Meus amigos de c\xE1 j\xE1 se foram em seu barquinho, creio que
+      eu e meus vizinhos de baixo partiremos hoje para buscar abrigo em uma cidade
+      grande. Gostaria de dizer que estamos fugindo por conta do povo de l\xE1, aqueles
+      malditos! Se voc\xEA que estiver lendo for um deles, eu te ODEIO. Se n\xE3o
+      for, cuidado com eles e com suas armas brilhantes e explosivas, de vez em quando
+      eles atiram para cima, bombas gigantes, com o intuito de nos amea\xE7ar. Adeus
+      ilhota, te amo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1015850508288
+    m_Localized: "Malditos! Conseguiram nos expulsar dessa ilha maravilhosa, irei
+      deixar meu bangal\xF4 com vista pro mar no esquecimento. Gostaria de saber
+      se os do lado de l\xE1 ainda tem aquele tesouro com ouro e suprimentos... Precisaremos
+      para nossa jornada. Adeus, ilha!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1052261261312
+    m_Localized: "Queridos moradores do lado de l\xE1, por anos tentamos contatar
+      voc\xEAs por meio de sinais de fuma\xE7a, sinalizadores e fogos de artif\xEDcio,
+      por\xE9m n\xE3o tivemos sucesso. Caso os senhores queiram ficar com nossas
+      propriedades, estamos partindo para a cidade, conseguimos juntar ouro o suficiente
+      para recome\xE7ar nossas vidas l\xE1. Na outra ponta desse lado da ilha enterramos
+      um ba\xFA com nossos sinalizadores, caso precisem. Obrigado por serem os melhores
+      vizinhos de ilha do mundo! Boa vida!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1088734928896
+    m_Localized: "Mandaram eu escrever essa carta, caso alguem viesse procurar pelo
+      ba\xFA. Bom, ele est\xE1 por aqui por perto, na regi\xE3o da praia. Boa sorte."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 989325729792
+    m_Localized: 25 de julho de 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1032975851520
+    m_Localized: 26 de julho de 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072591052800
+    m_Localized: 27 de julho de 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109664505856
+    m_Localized: 27 de julho de 1992
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

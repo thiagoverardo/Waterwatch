@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Table Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI Table
+  m_TableCollectionNameGuidString: 6870b55331b5f244e9a627ed27598954
+  m_Entries:
+  - m_Id: 9733447680
+    m_Key: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1124352958464
+    m_Key: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1366037143552
+    m_Key: CONTROLS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1436849577984
+    m_Key: "QUIT\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4830465138688
+    m_Key: 'PRESS F TO CLOSE
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11407800705024
+    m_Key: PRESS F TO PICKUP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11819266121728
+    m_Key: paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11883682242560
+    m_Key: MUSIC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12068420362240
+    m_Key: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12135415980032
+    m_Key: bACK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13776454197248
+    m_Key: CONTROLS DESCRIPTION
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15317911248896
+    m_Key: THANKS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15548216287232
+    m_Key: RESTART
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1620585386159

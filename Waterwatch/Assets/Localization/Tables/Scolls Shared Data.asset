@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Scolls Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Scrolls
+  m_TableCollectionNameGuidString: 747b12a5aff44474e90c4ac920503ef6
+  m_Entries:
+  - m_Id: 8722620416
+    m_Key: SCROLL 0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765874184192
+    m_Key: SCROLL 0 DATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 900465205248
+    m_Key: 'SCROLL 1 '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 938117472256
+    m_Key: SCROLL 1 DATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 962809339904
+    m_Key: 'SCROLL 2 '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 989325729792
+    m_Key: SCROLL 2 DATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1015850508288
+    m_Key: SCROLL 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1032975851520
+    m_Key: SCROLL 3 DATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1052261261312
+    m_Key: SCROLL 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072591052800
+    m_Key: SCROLL 4 DATE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1088734928896
+    m_Key: SCROLL 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109664505856
+    m_Key: SCROLL 5 DATE
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1620585891745

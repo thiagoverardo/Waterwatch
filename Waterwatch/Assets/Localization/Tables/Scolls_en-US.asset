@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Scolls_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: 747b12a5aff44474e90c4ac920503ef6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8722620416
+    m_Localized: I was fishing around the Maldives Islands, and suddenly I ran out
+      of gas on my boat, which is very strange. That had never happened before, I
+      am the most careful fisherman in the world, but today greed for a few more
+      fish has left me trapped on this island. I'm going to start my journey here
+      and that's why I'm writing this letter and leaving it here on the boat. I am
+      going to explore this huge island and, if I cannot survive, someone will be
+      able to find this record.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 765874184192
+    m_Localized: May, 5th 2021
+    m_Metadata:
+      m_Items: []
+  - m_Id: 938117472256
+    m_Localized: July, 22nd 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 989325729792
+    m_Localized: July, 25th 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1032975851520
+    m_Localized: July, 26th 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1109664505856
+    m_Localized: July, 27th 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1072591052800
+    m_Localized: July, 27th 1992
+    m_Metadata:
+      m_Items: []
+  - m_Id: 900465205248
+    m_Localized: If you find this letter, we are evacuating this island because of
+      a fight with the other side. The people on the other side of the island are
+      very dangerous and are threatening our people. They send out smoke signals
+      every day, threatening everyone on this side. They are much more advanced than
+      we are. We wouldn't stand a chance against them. CAUTION.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 962809339904
+    m_Localized: My friends are already gone in their boats. I believe that my neighbors
+      will leave today to seek shelter in a big city. I would like to say that we
+      are fleeing because of the people from the other side, those damned people!
+      If you are from the other side, I HATE you. If you are not from the other side,
+      watch out for them and their shiny explosive weapons, from time to time they
+      shoot up giant bombs, in order to threaten us. Goodbye isle, I love you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1015850508288
+    m_Localized: Damn you! They managed to expel us from this wonderful island, I
+      will leave my bungalow overlooking the sea in oblivion. I wonder if those on
+      the other side still have that treasure with gold and supplies... We will need
+      it for our journey. Goodbye, island!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1052261261312
+    m_Localized: Dear residents on the other side, for years we have tried to contact
+      you by means of smoke signals, flares and fireworks, but we have not been successful.
+      If you want to keep our properties, we are leaving for the city, we managed
+      to gather enough gold to start our lives there. At the other end of this side
+      of the island, we buried a chest with our flares, if needed. Thanks for being
+      the best island neighbors in the world! Good Life!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1088734928896
+    m_Localized: I was told to write this letter, in case anyone came looking for
+      the chest. Well, it's around here, on the beach area. Good luck.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 1

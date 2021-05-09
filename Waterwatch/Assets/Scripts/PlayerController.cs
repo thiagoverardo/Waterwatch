@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    float _baseSpeed = 10.0f;
+    float _baseSpeed;
+    float running_speed = 10.0f * 1.75f;
+    float walking_speed = 100.0f;
     float _gravidade = 9.8f;
     private Vector3 playerVelocity;
     private float jumpHeight = 2.0f;
     private bool canJump = false;
-
     //Referência usada para a câmera filha do jogador
     GameObject playerCamera;
     //Utilizada para poder travar a rotação no angulo que quisermos.
@@ -102,37 +103,37 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Button bbut1 = but1.GetComponent<Button>();
             bbut1.Select();
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Button bbut2 = but2.GetComponent<Button>();
             bbut2.Select();
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Button bbut3 = but3.GetComponent<Button>();
             bbut3.Select();
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             Button bbut4 = but4.GetComponent<Button>();
             bbut4.Select();
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             Button bbut5 = but5.GetComponent<Button>();
             bbut5.Select();
         }
-        
-        if(Input.GetKeyDown(KeyCode.Alpha6))
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             Button bbut6 = but6.GetComponent<Button>();
             bbut6.Select();
@@ -152,7 +153,7 @@ public class PlayerController : MonoBehaviour
                 hud.CloseMessagePanel();
             }
 
-            if(chestToOpen)
+            if (chestToOpen)
             {
                 chest.openChest();
             }
@@ -163,7 +164,7 @@ public class PlayerController : MonoBehaviour
 
         if ((x != 0 || z != 0) && Input.GetKey(KeyCode.LeftShift) && stamina > .5f)
         {
-            _baseSpeed = 10.0f * 1.75f;
+            _baseSpeed = running_speed;
             stamina -= Time.deltaTime * 17.5f;
             Debug.Log(stamina);
             if (stamina < 0.0f)
@@ -178,7 +179,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            _baseSpeed = 10.0f;
+            _baseSpeed = walking_speed;
             if (stamina < 100)
                 stamina += Time.deltaTime * 5;
         }
@@ -247,7 +248,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        if(other.gameObject.tag == "chest")
+        if (other.gameObject.tag == "chest")
         {
             hud.OpenMessagePanel("Pressione F para abrir");
             chestToOpen = true;
@@ -262,7 +263,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "chest")
+        if (other.gameObject.tag == "chest")
         {
             hud.CloseMessagePanel();
             chestToOpen = false;
