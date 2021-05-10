@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     float _baseSpeed;
-    public float walking_speed = 15.0f;
-    float running_speed = 0;
+    float walking_speed = 15.0f;
+    float running_speed;
     float _gravidade = 9.8f;
     private Vector3 playerVelocity;
     private float jumpHeight = 2.0f;
@@ -172,7 +172,6 @@ public class PlayerController : MonoBehaviour
         {
             _baseSpeed = running_speed;
             stamina -= Time.deltaTime * 17.5f;
-            Debug.Log(stamina);
             if (stamina < 0.0f)
                 stamina -= 25.0f;
             else if (stamina < 30.0f)

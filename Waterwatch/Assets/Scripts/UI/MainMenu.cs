@@ -9,6 +9,13 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject LoadingScreen;
     public Slider loading;
+    
+    void Awake()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void PlayGame()
     {
         // SceneManager.LoadScene(1);
