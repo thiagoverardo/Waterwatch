@@ -13,6 +13,11 @@ public class GameOver : MonoBehaviour
     {
         StartCoroutine(LoadGameAsync());
     }
+    void Awake()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
     public void Menu()
     {

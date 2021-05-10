@@ -12,27 +12,22 @@ public class PauseGame : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (paused)
+            if (!paused)
             {
                 Time.timeScale = 0;
-                paused = false;
+                paused = true;
                 Cursor.visible = true;
                 pauseMenu.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
             }
             else
             {
-                Time.timeScale = 1;
-                paused = true;
-                Cursor.visible = false;
-                pauseMenu.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
+                UnpauseGame();
             }
 
         }
@@ -41,10 +36,10 @@ public class PauseGame : MonoBehaviour
     public void UnpauseGame()
     {
         Time.timeScale = 1;
-        paused = true;
+        paused = false;
         Cursor.visible = false;
-        pauseMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        pauseMenu.SetActive(false);
     }
 
     public void Menu()

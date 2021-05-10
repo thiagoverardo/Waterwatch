@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Read1
   - chest
+  - water
   layers:
   - Default
   - TransparentFX

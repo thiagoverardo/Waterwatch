@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     float _baseSpeed;
-    float running_speed = 10.0f * 1.75f;
-    float walking_speed = 100.0f;
+    public float walking_speed = 15.0f;
+    float running_speed = 0;
     float _gravidade = 9.8f;
     private Vector3 playerVelocity;
     private float jumpHeight = 2.0f;
@@ -36,10 +36,12 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         characterController = GetComponent<CharacterController>();
         playerCamera = GameObject.Find("Main Camera");
         cameraRotation = 0.0f;
         inventory.ItemUsed += Inventory_ItemUsed;
+        running_speed = walking_speed * 2.0f;
         walkingSound = GetComponent<AudioSource>();
     }
 
@@ -75,6 +77,10 @@ public class PlayerController : MonoBehaviour
     {
         if (mCurrentItem != null)
         {
+            if(!goItem.activeSelf)
+            {
+                goItem.SetActive(true);
+            }
             mLockPickup = true;
             goItem = (mCurrentItem as MonoBehaviour).gameObject;
 
@@ -141,16 +147,16 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (ScrollPanel.activeSelf)
-            {
-                hud.CloseScrollPanel();
-            }
-
-            if (mItemToPickup != null)
+            if (mItemToPickup != null && !ScrollPanel.activeSelf)
             {
                 inventory.AddItem(mItemToPickup);
                 mItemToPickup.OnPickup();
                 hud.CloseMessagePanel();
+            }
+
+            if (ScrollPanel.activeSelf)
+            {
+                hud.CloseScrollPanel();
             }
 
             if (chestToOpen)
@@ -162,7 +168,7 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if ((x != 0 || z != 0) && Input.GetKey(KeyCode.LeftShift) && stamina > .5f)
+        if ((x != 0 || z != 0) && Input.GetKey(KeyCode.LeftShift) && stamina > .5f && walking_speed > 8)
         {
             _baseSpeed = running_speed;
             stamina -= Time.deltaTime * 17.5f;
@@ -250,8 +256,13 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "chest")
         {
-            hud.OpenMessagePanel("Pressione F para abrir");
+            hud.OpenMessagePanel("Pressione F para pegar");
             chestToOpen = true;
+        }
+
+        if (other.gameObject.tag == "water")
+        {
+            walking_speed = walking_speed/2f;
         }
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
@@ -268,6 +279,12 @@ public class PlayerController : MonoBehaviour
             hud.CloseMessagePanel();
             chestToOpen = false;
         }
+
+        if (other.gameObject.tag == "water")
+        {
+            walking_speed = walking_speed*3f;
+        }
+
 
         IInventoryItem item = other.GetComponent<IInventoryItem>();
         if (item != null)
