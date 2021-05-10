@@ -158,8 +158,3 @@ Web, PC;
 Livre para todos os públicos;
 
 Exploração;
-
-## Bugs Conhecidos:
----
-
-Ao entrar no jogo, voltar para o menu e começar o jogo novamente a tela do jogo fica preta. Basta clicar ESC para desativar essa tela.
