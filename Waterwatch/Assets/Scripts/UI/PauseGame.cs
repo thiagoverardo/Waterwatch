@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class PauseGame : MonoBehaviour
 {
     public bool paused = false;
     public GameObject pauseMenu;
-
+    public GameObject ScrollPanel;
+    public HUD hud;
     void Start()
     {
         Time.timeScale = 1;
@@ -19,6 +22,9 @@ public class PauseGame : MonoBehaviour
         {
             if (!paused)
             {
+                if (ScrollPanel.activeSelf){
+                    hud.CloseScrollPanel();
+                }
                 Time.timeScale = 0;
                 paused = true;
                 Cursor.visible = true;
