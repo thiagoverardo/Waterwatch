@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     float _baseSpeed;
-    float walking_speed = 15.0f;
+    float walking_speed = 150.0f;
     float running_speed;
     float _gravidade = 9.8f;
     private Vector3 playerVelocity;
@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    private bool mLockPickup = false;
 
     private void DropCurrentItem()
     {
@@ -81,7 +80,7 @@ public class PlayerController : MonoBehaviour
             {
                 goItem.SetActive(true);
             }
-            mLockPickup = true;
+
             goItem = (mCurrentItem as MonoBehaviour).gameObject;
 
             inventory.RemoveItem(mCurrentItem);
@@ -97,15 +96,7 @@ public class PlayerController : MonoBehaviour
 
     public void DoDropItem()
     {
-        mLockPickup = false;
         mCurrentItem = null;
-    }
-    void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            DropCurrentItem();
-        }
     }
     void Update()
     {
@@ -147,7 +138,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (mItemToPickup != null && !ScrollPanel.activeSelf)
+            if (mItemToPickup != null && !ScrollPanel.activeSelf && inventory.mItems.Count < 6)
             {
                 inventory.AddItem(mItemToPickup);
                 mItemToPickup.OnPickup();
@@ -156,6 +147,10 @@ public class PlayerController : MonoBehaviour
 
             if (ScrollPanel.activeSelf)
             {
+                if(goItem.name != "flaregun")
+                {
+                    goItem.SetActive(false);
+                }
                 hud.CloseScrollPanel();
             }
 
@@ -163,6 +158,11 @@ public class PlayerController : MonoBehaviour
             {
                 chest.openChest();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            DropCurrentItem();
         }
 
         float x = Input.GetAxis("Horizontal");
@@ -248,10 +248,6 @@ public class PlayerController : MonoBehaviour
     bool chestToOpen = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (mLockPickup)
-        {
-            return;
-        }
 
         if (other.gameObject.tag == "chest")
         {

@@ -46,13 +46,14 @@ public class HUD : MonoBehaviour
             Transform imageTransform = slot.GetChild(0).GetChild(0);
             Image image = imageTransform.GetComponent<Image>();
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
-
-            if(itemDragHandler.Item.Equals(e.Item))
-            {
-                image.enabled = false;
-                image.sprite = null;
-                itemDragHandler.Item = null;
-                break;
+            if(itemDragHandler.Item != null  && e.Item != null){
+                if(itemDragHandler.Item.Equals(e.Item))
+                {
+                    image.enabled = false;
+                    image.sprite = null;
+                    itemDragHandler.Item = null;
+                    break;
+                }
             }
         }
     }
