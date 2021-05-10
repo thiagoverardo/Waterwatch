@@ -158,3 +158,18 @@ Web, PC;
 Livre para todos os públicos;
 
 Exploração;
+
+## Referências e Assets
+---
+
+-ChangeLocale.cs: adaptado do comentário de [ZoidbergForPresident](https://www.youtube.com/channel/UChsv1S8-5yLBM1P_eR53Rjg), desse vídeo: [How To Add Support For Multiple Languages In Unity](https://www.youtube.com/watch?v=lku7f4KNFEo&ab_channel=DapperDino)
+-Todo o sistema de inventário: lista de reprodução de Unity do canal [Jayanam](https://www.youtube.com/playlist?list=PLboXykqtm8dxhCV5SVn0N76jrdCo5HV2a)
+-Post-Processing: adaptado do video de [LMHPOLY](https://www.youtube.com/watch?v=uwYf1yMPuvk)
+-Flare Gun Asset: retirado do perfil de [Rokay3D](https://assetstore.unity.com/packages/3d/props/guns/flare-gun-12820)
+-Low Poly Nature Asset: retirado do perfil de [Elcanetay](https://assetstore.unity.com/packages/3d/vegetation/low-poly-nature-free-vegetation-134006)
+-Low Poly Desert Pack: retirado do perfil de [23 Space Robots and Counting...](https://assetstore.unity.com/packages/3d/environments/free-low-poly-desert-pack-106709)
+-Ultimate Low Poly Dungeon: retirado do perfil de [Broken Vector](https://assetstore.unity.com/packages/3d/environments/dungeons/ultimate-low-poly-dungeon-143535)
+-Boats - Low Poly: retirado do perfil de [Alstra Infinite](https://assetstore.unity.com/packages/3d/vehicles/sea/boats-low-poly-189866)
+-Low Poly Simple Nature Pack: retirado do perfil de [JustCreate](https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153)
+-Low Poly Mini Village Free: retirado do perfil de [Ioan Stan](https://assetstore.unity.com/packages/3d/environments/low-poly-mini-village-free-131677)
+-URP Stylized Water Shader - Proto Series: retirado do perfil de [BitGem](https://assetstore.unity.com/packages/vfx/shaders/urp-stylized-water-shader-proto-series-187485)
